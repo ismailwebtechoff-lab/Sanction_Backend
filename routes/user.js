@@ -1,8 +1,8 @@
 const express = require('express');
 const router=express.Router();
 const {login,logOut, check,register,getAllUser,updateUser,deleteUser,getUser} = require("../controller/user");
-const verifyToken = require('../middleware/auth');
-const authorizeRoles = require('../middleware/authorize')
+const verifyToken = require('../middelware/auth');
+const authorizeRoles = require('../middelware/authorize')
 
 router.post("/login",login); //for login to the app
 router.post("/logout",logOut); // for logout from the app
