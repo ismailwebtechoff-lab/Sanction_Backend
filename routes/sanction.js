@@ -1,10 +1,10 @@
 const express = require('express');
 const router=express.Router();
-const upload = require('../middleware/upload');
+const upload = require('../middelware/upload');
 
 const {addSanction,updateSanction,deleteSanction,getAllSanctions,} = require("../controllers/sanction");
-const verifyToken = require('../middleware/auth')
-const authorizeRoles = require('../middleware/authorize')
+const verifyToken = require('../middelware/auth')
+const authorizeRoles = require('../middelware/authorize')
 
 router.get("/",verifyToken,getAllSanctions)  //Get all sanction
 router.post('/',verifyToken, authorizeRoles('Admin'),upload.fields([
